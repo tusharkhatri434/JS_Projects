@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #252424;
+}
+.form{
+    background: white;
+    max-width: 350px;
+    padding: 10px 0;
+    min-height: 200px;
+    border-radius: 10px;
+    margin: 10% auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+
+}
+#text-box{
+    width:220px;
+    font-size: 18px;
+    border: none;
+    border: 1px solid #292929;
+    border-radius: 5px;
+    padding: 10px 10px;
+
+}
+#label{
+    font-size: 20px;
+    font-weight:600;
+}
+#qr-code{
+     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#Btn{
+    border: none;
+    background: rgba(37, 4, 247, 0.854);
+    color:white;
+    font-size: large;
+    padding: 10px 30px;
+    border-radius: 6px;
+    cursor: pointer;
+
+}
+
+ .spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #eeedf1; 
+    border-top: 5px solid #0823f1;
+    border-radius: 50%;
+    animation: spin 1s linear infinite; 
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
