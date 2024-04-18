@@ -135,7 +135,7 @@ window.addEventListener("keydown", (e) => {
 });
 arrowKey.addEventListener('click',(e)=>{
   e.preventDefault();
-    //  moveSound.play();
+     moveSound.play();
   inputDir = { x: 0, y: 1 }; // Start the game
 
   console.log(e.target.id);
