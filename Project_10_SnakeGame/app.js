@@ -4,7 +4,7 @@ const arrowKey = document.querySelector(".arrowKey");
 const foodSound = new Audio("music/food.mp3");
 const gameOverSound = new Audio("music/gameover.mp3");
 const moveSound = new Audio("music/move.mp3");
-const musicSound = new Audio("music/music.mp3");
+// const musicSound = new Audio("music/music.mp3");
 let inputDir = { x: 0, y: 0 }; 
 let speed = 4;
 let score = 0;
@@ -52,19 +52,20 @@ function gameEngine(){
     // we check if snake collide with himself or wall;
     if(isCollide(snakeArr)){
          gameOverSound.play();
-        musicSound.pause();
+        // musicSound.pause();
         inputDir =  {x: 0, y: 0}; 
         alert(`Game Over. score:${score} Press any key to play again!`);
         snakeArr = [{x: 13, y: 15}];
-        musicSound.play();
+        // musicSound.play();
         score = 0; 
+        scoreBox.innerHTML = score;
     }
 
     // eaten food or not
     if(snakeArr[0].y===food.y && snakeArr[0].x===food.x){
        score+=1;
-       foodSound.play();
        scoreBox.innerHTML = score;
+       foodSound.play();
         
         snakeArr.unshift({x: snakeArr[0].x + inputDir.x, y: snakeArr[0].y + inputDir.y});
         generateFoodRandomly();
@@ -101,10 +102,12 @@ function gameEngine(){
 }
 
 // main logic
-musicSound.play();
+// musicSound.play();
 window.requestAnimationFrame(main);
 // key logic 
 window.addEventListener("keydown", (e) => {
+      moveSound.play();
+
   inputDir = { x: 0, y: 1 }; // Start the game
   switch (e.key) {
     case "ArrowUp":
@@ -132,6 +135,7 @@ window.addEventListener("keydown", (e) => {
 });
 arrowKey.addEventListener('click',(e)=>{
   e.preventDefault();
+    //  moveSound.play();
   inputDir = { x: 0, y: 1 }; // Start the game
 
   console.log(e.target.id);
